@@ -31,11 +31,12 @@
             LblUsuario = new Label();
             LblContraseña = new Label();
             LblModulo = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            TxtUsuario = new TextBox();
+            TxtContraseña = new TextBox();
             BtnAceptar = new Button();
             BtnCancelar = new Button();
             CmbComboBox = new ComboBox();
+            btnCancel = new Button();
             SuspendLayout();
             // 
             // LblUsuario
@@ -71,23 +72,23 @@
             LblModulo.TabIndex = 2;
             LblModulo.Text = "Modulo";
             // 
-            // textBox1
+            // TxtUsuario
             // 
-            textBox1.Location = new Point(228, 82);
-            textBox1.MaxLength = 10;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(109, 23);
-            textBox1.TabIndex = 3;
+            TxtUsuario.Location = new Point(228, 82);
+            TxtUsuario.MaxLength = 10;
+            TxtUsuario.Name = "TxtUsuario";
+            TxtUsuario.Size = new Size(109, 23);
+            TxtUsuario.TabIndex = 3;
             // 
-            // textBox2
+            // TxtContraseña
             // 
-            textBox2.Location = new Point(228, 182);
-            textBox2.MaxLength = 10;
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '#';
-            textBox2.Size = new Size(109, 23);
-            textBox2.TabIndex = 4;
-            textBox2.TextChanged += textBox2_TextChanged;
+            TxtContraseña.Location = new Point(228, 182);
+            TxtContraseña.MaxLength = 10;
+            TxtContraseña.Name = "TxtContraseña";
+            TxtContraseña.PasswordChar = '#';
+            TxtContraseña.Size = new Size(109, 23);
+            TxtContraseña.TabIndex = 4;
+            TxtContraseña.TextChanged += textBox2_TextChanged;
             // 
             // BtnAceptar
             // 
@@ -102,38 +103,47 @@
             // 
             // BtnCancelar
             // 
-            BtnCancelar.ForeColor = Color.Black;
-            BtnCancelar.Location = new Point(452, 199);
+            BtnCancelar.Location = new Point(0, 0);
             BtnCancelar.Name = "BtnCancelar";
             BtnCancelar.Size = new Size(75, 23);
-            BtnCancelar.TabIndex = 7;
-            BtnCancelar.Text = "Cancelar";
-            BtnCancelar.UseVisualStyleBackColor = true;
+            BtnCancelar.TabIndex = 0;
             // 
             // CmbComboBox
             // 
+            CmbComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbComboBox.FormattingEnabled = true;
+            CmbComboBox.Items.AddRange(new object[] { "ADM", "SIST", "COM", "VTA" });
             CmbComboBox.Location = new Point(228, 283);
             CmbComboBox.Name = "CmbComboBox";
             CmbComboBox.Size = new Size(109, 23);
             CmbComboBox.TabIndex = 8;
             // 
-            // Form1
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(452, 172);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 9;
+            btnCancel.Text = "Cancelar";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // frmRegistrar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 192);
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCancel);
             Controls.Add(CmbComboBox);
-            Controls.Add(BtnCancelar);
             Controls.Add(BtnAceptar);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(TxtContraseña);
+            Controls.Add(TxtUsuario);
             Controls.Add(LblModulo);
             Controls.Add(LblContraseña);
             Controls.Add(LblUsuario);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "frmRegistrar";
+            Text = "Login";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,10 +153,11 @@
         private Label LblUsuario;
         private Label LblContraseña;
         private Label LblModulo;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox TxtUsuario;
+        private TextBox TxtContraseña;
         private Button BtnAceptar;
         private Button BtnCancelar;
         private ComboBox CmbComboBox;
+        private Button btnCancel;
     }
 }

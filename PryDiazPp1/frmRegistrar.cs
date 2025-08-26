@@ -20,7 +20,16 @@ namespace PryDiazPp1
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
             frmBienvenida frmBienvenida = new frmBienvenida();
-            frmBienvenida.ShowDialog(); 
+            frmBienvenida.ShowDialog();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            TxtUsuario.Text = "";
+
+            TxtContraseña.Text = "";
+
+            CmbComboBox.SelectedIndex = -1;
         }
     }
 }
